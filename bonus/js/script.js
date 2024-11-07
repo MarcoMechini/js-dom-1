@@ -17,12 +17,8 @@ let spenta = () => {
     console.log('sono bianca');
 }
 
-lampItem.addEventListener("mouseover", function () {
-    accesa();
-})
-lampItem.addEventListener("mouseout", function () {
-    spenta();
-})
+lampItem.addEventListener("mouseover", accesa)
+lampItem.addEventListener("mouseout", spenta)
 
 lampBtn.addEventListener("mouseover", function () {
 
