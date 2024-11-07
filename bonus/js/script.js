@@ -5,27 +5,31 @@ console.log(lampItem.src);
 const lampBtn = document.querySelector("button");
 console.log(lampBtn);
 
-
-lampItem.addEventListener("mouseover", function () {
+let accesa = () => {
     lampItem.src = "./img/yellow_lamp.png";
     lampBtn.innerHTML = "Accendi"
     console.log('sono gialla');
-})
-lampItem.addEventListener("mouseout", function () {
+}
+
+let spenta = () => {
     lampItem.src = "./img/white_lamp.png";
     lampBtn.innerHTML = "Spengi"
     console.log('sono bianca');
+}
+
+lampItem.addEventListener("mouseover", function () {
+    accesa();
+})
+lampItem.addEventListener("mouseout", function () {
+    spenta();
 })
 
 lampBtn.addEventListener("mouseover", function () {
 
     if (lampItem.src.includes("white_lamp.png")) {
-        lampItem.src = "./img/yellow_lamp.png";
-        lampBtn.innerHTML = "Accendi"
-        console.log('sono gialla');
+        accesa();
     } else if (!(lampItem.src.includes("white_lamp.png"))) {
-        lampItem.src = "./img/white_lamp.png";
-        lampBtn.innerHTML = "Spengi"
-        console.log('sono bianca');
+        spenta();
     }
 })
+
